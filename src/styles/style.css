@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lalezar&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all 0.3s linear;
+}
+
+:root {
+  --pinkCol: #db3ea6;
+}
+
+html {
+  scroll-padding-top: 0.8rem;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  overflow-x: hidden;
+  background-color: #00008f;
+  color: #fff;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: #fff;
+  z-index: 3;
+}
+
+.container {
+  max-width: 80%;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* ============NAV BAR================ */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1.5rem 0;
+  overflow-x: hidden;
+}
+
+nav li {
+  display: inline-block;
+  list-style: none;
+  margin-right: 20px;
+}
+
+nav li a {
+  font-size: 18px;
+  color: #fff;
+  text-decoration: none;
+}
+nav li a:hover {
+  font-weight: 600;
+  color: var(--pinkCol);
+}
+
+.brand-logo {
+  font-family: "Lalezar", sans-serif;
+  font-size: 45px;
+}
+.brand-logo a {
+  color: #fff;
+  text-decoration: none;
+}
+.brand-logo a:hover {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.22);
+}
+
+.burger-btn div {
+  width: 25px;
+  height: 2px;
+  background-color: rgb(238, 238, 238);
+  margin-bottom: 3px;
+}
+
+.burger-btn {
+  display: none;
+}
+
+/* ================BUTTON================== */
+.btn {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  background-color: var(--pinkCol);
+  padding: 15px 50px;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--greenlake);
+  opacity: 80%;
+}
+
+.btn-p {
+  margin-top: 30px;
+  margin-bottom: 40px;
+  background-color: rgb(255, 255, 255, 0.25);
+  padding: 15px 50px;
+  border: none;
+  border-radius: 40px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-p:hover {
+  background-color: var(--pinkCol);
+  opacity: 80%;
+}
+
+main {
+  padding-top: 10rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.list {
+  padding-top: 15rem;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card {
+  margin-top: 30px;
+  width: 19%;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.card h5 {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.card p {
+  font-weight: 300;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.card img:hover {
+  box-shadow: 0 14px 28px rgba(208, 31, 214, 0.25),
+    0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.card:hover > h5.title {
+  color: #db3ea6;
+}
+
+section#movie,
+section#tvseries {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .container {
+    max-width: 91%;
+  }
+
+  .row-header h3 {
+    font-size: 1.5rem;
+  }
+
+  .row {
+    justify-content: space-evenly;
+  }
+
+  .card {
+    width: 31%;
+    border-radius: 8px;
+  }
+
+  .card img {
+    border-radius: 8px;
+  }
+
+  .btn-p {
+    background-color: rgb(255, 255, 255, 0.25);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 40px;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+/* ===================ADDITIONAL STYLE==================== */
+.nav-active {
+  transform: translateX(0%);
+}
+
+.bg-nav-color {
+  background-color: #262626;
+}

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles/style.css" />
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.css" />
     <title>Movies Project</title>
   </head>
   <body>
@@ -27,12 +28,49 @@
     </header>
     <main>
       <article class="hero">
-        <div class="container">
-          <div class="wrapper">
-            <p>action, adventure, comedy</p>
-            <h2>Spider-Man: No Way Home (2021)</h2>
-            <button class="btn">View Movie</button>
-            <button class="btn-p">Watch Trailer</button>
+        <div class="wrap">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="https://www.themoviedb.org/t/p/original//3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg"
+                  alt=""
+                />
+                <div class="caption">
+                  <span>adventure, marvel</span>
+                  <h1>Black Adam (2022)</h1>
+                  <button>View Movie</button>
+                  <button>Watch Trailer</button>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://www.themoviedb.org/t/p/original//3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg"
+                  alt=""
+                />
+                <div class="caption">
+                  <span>adventure, marvel</span>
+                  <h1>Black Adam (2022)</h1>
+                  <button>View Movie</button>
+                  <button>Watch Trailer</button>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="https://www.themoviedb.org/t/p/original//3zXceNTtyj5FLjwQXuPvLYK5YYL.jpg"
+                  alt=""
+                />
+                <div class="caption">
+                  <span>adventure, marvel</span>
+                  <h1>Black Adam (2022)</h1>
+                  <button>View Movie</button>
+                  <button>Watch Trailer</button>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
           </div>
         </div>
       </article>
@@ -103,7 +141,7 @@
         </div>
       </article>
     </main>
-
+    <script src="node_modules/swiper/swiper-bundle.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

@@ -1,4 +1,4 @@
-var swiper = new Swiper(".mySwiper", {
+const swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   centeredSlides: true,
   autoplay: {
@@ -15,37 +15,20 @@ var swiper = new Swiper(".mySwiper", {
   },
 });
 
+//slider AJAX
+
 const slidesCom = document.querySelector(".swiper-slide");
 
 fetch(
   "https://api.themoviedb.org/3/movie/now_playing?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1"
 )
   .then((response) => response.json())
-  .then(
-    (response) => {
-      const moviess = response.results;
-      const movies = moviess.slice(0, 5);
-      // let cards = "";
-      // console.log(movies.slice(0, 3));
-      let test = "";
-      renderAllSlides(movies);
-      // for (const movie of movies) {
-      // test = `${movie.title},test,https://www.themoviedb.org/t/p/original/${movie.poster_path},https://codepen.io/emanuelemicheletti/pen/abYarrv,View this movie`;
-      //   myArray.push(
-      //     movie.title,
-      //     "test",
-      //     "https://www.themoviedb.org/t/p/original/ " + movie.poster_path + "",
-      //     "https://codepen.io/emanuelemicheletti/pen/abYarrv",
-      //     "View Movie"
-      //   );
-
-      //   console.log(
-      //     "https://www.themoviedb.org/t/p/original/" + movie.poster_path
-      //   );
-      console.log(slidesCom);
-    }
-    //   }
-  );
+  .then((response) => {
+    const moviess = response.results;
+    const movies = moviess.slice(0, 5);
+    renderAllSlides(movies);
+    console.log(movies);
+  });
 
 const renderAllSlides = (slides) => {
   const slidesCom = document.querySelector(".swiper-wrapper");
@@ -71,6 +54,19 @@ const renderAllSlides = (slides) => {
   });
 };
 
+//navbar in mobile
+let btn = document.querySelector(".burger-btn");
+let menu = document.querySelector(".nav-links");
+let links = document.querySelectorAll(".nav-links li a");
+btn.addEventListener("click", function () {
+  menu.classList.toggle("nav-active");
+});
+
+for (let i = 0; i < links.length; i++) {
+  links[i].addEventListener("click", function () {
+    menu.classList.toggle("nav-active");
+  });
+}
 //change bg when scroll
 let navbar = document.querySelector("header");
 
@@ -84,13 +80,13 @@ window.addEventListener("scroll", function () {
   }
 });
 
+//Popular Movies AJAX
 fetch(
   "https://api.themoviedb.org/3/movie/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1"
 )
   .then((response) => response.json())
   .then((response) => {
     const movies = response.results;
-    // let cards = "";
 
     for (const movie of movies) {
       console.log(movie);
@@ -107,6 +103,34 @@ const renderAllMovies = (movies) => {
         <div class="card">
                 <img src="https://www.themoviedb.org/t/p/original/${movie.poster_path}" alt="" />
                 <h5 class="title">${movie.title}</h5>
+        </div>
+      `;
+  });
+};
+
+//Popular TV Series AJAX
+fetch(
+  "https://api.themoviedb.org/3/tv/popular?api_key=17c8dffc0cbd61894a0460817bbba88e&language=en-US&page=1"
+)
+  .then((response) => response.json())
+  .then((response) => {
+    const movies = response.results;
+
+    for (const serie of movies) {
+      console.log(serie);
+    }
+    renderAllTVSeries(movies);
+  });
+
+const renderAllTVSeries = (movies) => {
+  const listSerieElement = document.querySelector("#listSerie");
+  listSerieElement.innerHTML = "";
+
+  movies.forEach((serie) => {
+    listSerieElement.innerHTML += `
+        <div class="card">
+                <img src="https://www.themoviedb.org/t/p/original/${serie.poster_path}" alt="" />
+                <h5 class="title">${serie.name}</h5>
         </div>
       `;
   });

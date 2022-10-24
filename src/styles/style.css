@@ -10,6 +10,8 @@
 
 :root {
   --pinkCol: #db3ea6;
+  --swiper-navigation-color: #fff;
+  --swiper-pagination-color: #fff;
 }
 
 html {
@@ -49,7 +51,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 0;
+  margin: 0.4rem 0;
   overflow-x: hidden;
 }
 
@@ -106,7 +108,7 @@ nav li a:hover {
 }
 
 .btn:hover {
-  background-color: var(--greenlake);
+  background-color: var(--pinkCol);
   opacity: 80%;
 }
 
@@ -123,7 +125,8 @@ nav li a:hover {
 }
 
 .btn-p:hover {
-  background-color: var(--pinkCol);
+  color: var(--pinkCol);
+  border: 1px solid var(--pinkCol);
   opacity: 80%;
 }
 
@@ -242,11 +245,11 @@ h3 {
   color: #db3ea6;
 }
 
-/* section#movie,
+section#movie,
 section#tvseries {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-} */
+  padding-top: 4.5rem;
+  padding-bottom: 1.5rem;
+}
 
 @media screen and (max-width: 1000px) {
   .container {
@@ -280,6 +283,60 @@ section#tvseries {
     color: white;
     cursor: pointer;
   }
+
+  .burger-btn {
+    display: block;
+    z-index: 4;
+  }
+
+  .brand-logo {
+    font-size: 35px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  .nav-links {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 150px 30px 50px 30px;
+    transform: translateX(100%);
+  }
+
+  nav li {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  nav li a {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #c9c9c9;
+    opacity: 0.8;
+    z-index: 99;
+  }
+
+  nav li a:hover {
+    font-weight: 700;
+  }
+
+  .swiper-slide .caption {
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    /* background-color: #c9c9c9; */
+  }
 }
 
 /* ===================ADDITIONAL STYLE==================== */
@@ -288,5 +345,5 @@ section#tvseries {
 }
 
 .bg-nav-color {
-  background-color: #262626;
+  background-color: #3b1080;
 }

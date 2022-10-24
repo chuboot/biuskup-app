@@ -1,3 +1,5 @@
+import "./src/script/component/app-footer.js";
+
 const swiper = new Swiper(".mySwiper", {
   spaceBetween: 30,
   centeredSlides: true,
